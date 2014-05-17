@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <windows.h>
+#include <tchar.h>								// Unicode・マルチバイト文字関係
+
+#include <D3D11.h>
+#include <D3DX11.h>
+#include <D3Dcompiler.h>
+#include <xnamath.h>
+
+
+#define MAX_BUFFER_VERTEX				1000	// 最大バッファ頂点数
+
+
+// リンクライブラリ
+#pragma comment( lib, "d3d11.lib" )   // D3D11ライブラリ
+#pragma comment( lib, "d3dx11.lib" )
+
+
+// セーフリリースマクロ
+#ifndef SAFE_RELEASE
+#define SAFE_RELEASE( p )      { if ( p ) { ( p )->Release(); ( p )=NULL; } }
+#endif
+
